@@ -77,8 +77,9 @@ their phone and sends the URL. Do NOT submit with the placeholder.
 
 - --prompt-origin handed-off
 - --prompt-via "subagent task from the main agent"
-- Parents (round 2): coordinator session f3b4f504-159f-4618-8ba3-8eef97fcde24
-  (parent orchestrator handoff label) + main session
+- Parents (round 2): coordinator session fdf7e030-95c4-466b-b19a-04292ee3a9b3
+  (this coordinator's actual session id; corrected from the task-label
+  id the build agent recorded) + main session
   710bc693-2de5-453e-a87f-8be6fb75c614
 - This build session: 33274ee6-75b5-4f6e-b594-2a8dc4192e5e
 - Prompt file (user's verbatim words):
