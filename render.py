@@ -157,6 +157,16 @@ def main():
     print("wasted font", f_wasted.size, "satire", f_sat.size,
           "punch", f_bot.size, "bar_y0", bar_y0, "bar_y1", bar_y1)
 
+    # ---- Output validation: the render must not silently drift ----
+    # Re-read what was actually written and check the deliverable, plus
+    # confirm the ghost asset loaded at the size the layout assumes.
+    saved = Image.open(out)
+    assert saved.size == (W, W), saved.size
+    assert out.stat().st_size <= 1024 * 1024, out.stat().st_size
+    assert ghost.size == (1024, 1024), ghost.size
+    print("validated", out, saved.size, out.stat().st_size, "bytes",
+          "ghost", ghost.size)
+
 
 if __name__ == "__main__":
     main()
