@@ -92,3 +92,59 @@ their phone and sends the URL. Do NOT submit with the placeholder.
   due 2026-12-08T02:00:00Z.
 - The parent bundles + submits ONLY after the user posts and sends
   the real X post URL, then replaces POST.json with it.
+
+## Submission — ROUND 2 SUBMITTED + VERIFIED VALID (2026-11-20 ~13:26 WIB)
+
+- User chose round 2 ("Ronde 2 — WASTED bersih") and posted from
+  their phone: https://x.com/zaaaeth/status/2123660038158033139
+  (posted 2026-11-20T06:09:43Z). The cloud browser could NOT verify
+  the post (x.com HTTP 403 bot wall), so the post was unverified
+  until the server's own entry_link check confirmed it: post by
+  @zaaaeth, 1 photo, mentions @makefunai, links to make.fun
+  (https://make.fun/bounty/gta6-meme-x-01), carries the play code.
+- POST.json set to the canonical URL in commit baa87e3 (build agent
+  873ba986-1027-4b7a-8b87-77ac1b238aeb; main.ts verified exit 0,
+  byte-identical, from /tmp and from the repo dir).
+- First local check FAILED on thinking_reproduces + thinking_revised:
+  the build session had copied main.ts/render.py from round 1
+  instead of authoring them, and no file was revised by 2+ messages.
+  Fix (same pattern as news-image fix 1): revision agent
+  334e3a5b-95c6-4c75-a8b2-061a0c9d33f6 rewrote main.ts with real output
+  validation (JSON parse, url string, X status-URL pattern
+  ^https://x\.com/[^/]+/status/\d+$, byte-length match; 3 negative
+  tests exit 1) + a second refinement edit, and added output
+  validation to render.py (1024x1024, ≤1 MiB, ghost 1024x1024).
+  meme.png sha256 UNCHANGED (776ce1e6...). Commit 966fd4a
+  ("Round 2 rev 1: validate main.ts output and render.py output").
+- Combined bundle: 4 sessions (round-1 build 995d47e1, round-2 build
+  33274ee6, POST.json 873ba986, revision 334e3a5b) + 4 usage rows,
+  parents = round-2 coordinator fdf7e030 + submit coordinator
+  3e515b54 + main 710bc693. Tarball
+  gta6-meme-x-01-round2-rev1-combined-transcripts.tar.gz
+  (11,501,221 bytes, sha256
+  555c3b0486c861f7e9d340ba0658087cd4b0915c9215eb8413c4a2d2ebcbafa8).
+- Second local check: 13 passed, 0 failed — thinking_reproduces
+  46.6% (132/283 authored), thinking_revised main.ts from 2
+  messages, thinking_in_window all 151 timestamps in window,
+  license_osi MIT pass. Kit level 27 = server level 27 (the level-21
+  warning in the parent handoff was about the separate gta6-01-kit).
+- Quota re-checked before submit: entries_made 1, entries_kept 1,
+  can_submit true, day cap 3 left 3.
+- SUBMITTED 2026-11-20T06:26:31Z, submission
+  01a1f7a2-9a99-76ab-a4b4-dee4740039fc, title "WASTED — 13 Years, 2
+  Delays, 99% Loading", signed by wallet
+  AeP6ktnZEdUHu6nQwQSQeK1gHEMhAWfk2iS32pXx1Cwx, commit 966fd4a.
+  Claim code saved to
+  ~/workspace/makefun/submission-01a1f7a2-9a99-76ab-a4b4-dee4740039fc.json
+  mode 600 (NEVER print).
+- VERIFIED: stage scored, outcome null, error null — **27 checks
+  pass, 3 skip, 0 fail** (skips: sponsor_self_entry, thinking_on_task,
+  thinking_fresh). repo_about passed with a recommendation (About
+  topics lack ai-agents, bounties — left as is, check passed).
+- Leaderboard ~13:28 WIB: round 2 LIVE at **rank 644/2451,
+  prize_rank 643, judge 72.2678%** (range 66.87–77.66%) — up sharply
+  from round 1's 58.1%, but still outside the top 50. Round 1's row
+  is replaced; round 2 is now the final entry. Result due
+  2026-12-08T02:00:00Z. Round 3 (pixel-art PC) was NOT submitted —
+  the user chose round 2; 1 valid slot remains if a round 3/4 is
+  ever wanted before the 23 Nov 21:00 WIB deadline.
